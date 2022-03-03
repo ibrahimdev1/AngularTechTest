@@ -22,11 +22,11 @@ MyApp.controller('EmpCtrl', function ($scope, $http, EmployeeService) {
 
 
     $scope.getTotal = function gettotal() {
-        var total = 0
+        var total = 0;
         for (var i = 0; i < $scope.Employees.length; i++) {
-            total += $scope.Employees[i].Salary
+            total += $scope.Employees[i].Salary;
         }
-        return total
+        return total;
     };
     $scope.getemp = function (emp) {
         $scope.EditEmp = emp;
