@@ -14,10 +14,13 @@ MyApp.controller('EmpCtrl', function ($scope, $http, EmployeeService) {
             url: "/Employees/UpdateEmpl",
             dataType: 'json',
             params: { id: $scope.EditEmp.Id, salary: $scope.EditEmp.Salary },
-        }).then()
-        {
-            window.location.reload();
-        }
+          }).then(function (response) {
+              console.log(response);
+              $scope.Employees = response.data;
+              // window.location.reload();
+
+
+          })
     };
 
 

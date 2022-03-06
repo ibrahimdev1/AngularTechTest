@@ -19,18 +19,23 @@ namespace AngularTechTest.Controllers
         public JsonResult GetEmpl()
 
         {
+            /*
             EmployeesContext employeesContext = new EmployeesContext();
-            var resault = employeesContext.Employees.ToList();
+            var resault = employeesContext.Employees.ToList();*/
+            EmployeeSeed employeeSeed = new EmployeeSeed();
+            var  resault=  employeeSeed.emplist;
             return Json(resault, JsonRequestBehavior.AllowGet);
         }
+       
         [HttpPost]
-        public JsonResult UpdateEmpl(int id , int salary  )
+        public JsonResult UpdateEmpl(int id , int salary )
 
         {
-            EmployeesContext employeesContext = new EmployeesContext();
-            employeesContext.Employees.Single(emp=>emp.Id==id ).Salary = salary;
-            employeesContext.SaveChanges();
-            return Json(employeesContext, JsonRequestBehavior.AllowGet);
+
+EmployeeSeed employeeSeed = new EmployeeSeed();
+       employeeSeed.emplist.Single(emp => emp.Id == id).Salary = salary;
+
+            return Json(employeeSeed.emplist, JsonRequestBehavior.AllowGet);
         }
 
     }

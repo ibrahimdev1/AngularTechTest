@@ -68,23 +68,19 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row" style="text-align:center">
-                    <div>
-                        <label class="col-md-6">Name</label>
-                        <label class="col-md-6">Salary</label>
-
-                    </div>
+                <div class="text-center"  >
+                    <div class="col-md-5"><label class="text-center">Name</label></div>
+                    <div class="col-md-5"><label class="text-center">Salary</label></div>
                 </div>
                 <div class="row">
-                    <div style="text-align:center">
-                        <label class="col-md-6">{{EditEmp.Name}}</label>
-                        <input type="number" ng-model="EditEmp.Salary" />
-
+                    <div class="text-center" >
+                        <div class="col-md-5"><label class="text-center">{{EditEmp.Name}}</label></div>
+                        <div class="col-md-5"><input type="number" ng-model="EditEmp.Salary"  class="form-control"/></div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" ng-click="ButtonClick(EditEmp)">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="reload()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="ButtonClick(EditEmp)">Close & Reload</button>
                 </div>
             </div>
         </div>
